@@ -1,12 +1,12 @@
-## Matic (MATIC) testnet token contracts
+## SAMKENCOIN (SAMKEN) testnet token contracts
 
 Details:  
-Name: Testnet Matic  
-Symbol: MATIC
+Name: Testnet Samken  
+Symbol: SAMKEN
 Decimals: 18  
 Total Supply: 10,000,000,000
 
-The contracts are created with the OpenZeppelin library v2.0. The token is a standard ERC20 token implementing the IERC20 interface.
+The contracts are created with the OpenZeppelin library v4.5.1. The token is a standard ERC20 token implementing the IERC20 interface.
 
 ```
 /**
