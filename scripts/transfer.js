@@ -1,4 +1,4 @@
-const Token = artifacts.require("MaticToken")
+const Token = artifacts.require("Samkencoin")
 
 async function fireTx() {
   const t = await Token.at(process.argv[4])
