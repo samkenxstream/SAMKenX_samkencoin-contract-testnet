@@ -1,4 +1,4 @@
-const Token = artifacts.require("./contracts/MaticToken.sol")
+const Token = artifacts.require("./contracts/Samkencoin.sol")
 const BigNumber = web3.utils.BigNumber
 
 const toWei = web3.utils.toWei
@@ -13,7 +13,7 @@ contract("Token", async accounts => {
 
   describe("total supply", function() {
     beforeEach(async function() {
-      token = await Token.new("Matic test", "MTX", 18, toWei("100"), {
+      token = await Token.new("Samkencoin test", "SAM", 18, toWei("100"), {
         from: owner
       })
     })
