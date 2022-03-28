@@ -1,7 +1,7 @@
 ## SAMKENCOIN (SAMKEN) testnet token contracts
 
 Details:  
-Name: Testnet Samken  
+Name: Testnet Samkencoin  
 Symbol: SAMKEN
 Decimals: 18  
 Total Supply: 10,000,000,000
