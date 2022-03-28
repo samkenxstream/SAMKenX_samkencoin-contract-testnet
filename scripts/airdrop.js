@@ -1,8 +1,8 @@
 const assert = require('assert')
 
 const parseCsv = require('../test/utils').parseCsv
-const Token = artifacts.require("./contracts/MaticToken.sol")
-const Airdrop = artifacts.require("./contracts/MaticTokenAirdrop.sol")
+const Token = artifacts.require("./contracts/Samkencoin.sol")
+const Airdrop = artifacts.require("./contracts/SamkencoinAirdrop.sol")
 const SCALING_FACTOR = web3.utils.toBN(10 ** 18)
 
 async function fireTx() {
