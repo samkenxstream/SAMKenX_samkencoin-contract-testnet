@@ -483,9 +483,9 @@ contract ERC20Detailed is IERC20 {
     }
 }
 
-// File: contracts/MaticToken.sol
+// File: contracts/Samkencoin.sol
 
-contract MaticToken is ERC20Pausable, ERC20Detailed {
+contract Samkencoin is ERC20Pausable, ERC20Detailed {
     constructor (string memory name, string memory symbol, uint8 decimals, uint256 totalSupply)
     public
     ERC20Detailed (name, symbol, decimals) {
