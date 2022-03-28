@@ -12,7 +12,7 @@ import { SafeERC20 } from "openzeppelin-solidity/contracts/token/ERC20/SafeERC20
  * typical vesting scheme, with a cliff and vesting period. Optionally revocable by the
  * owner.
  */
-contract MaticTokenVesting is Ownable {
+contract SamkencoinVesting is Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
@@ -39,8 +39,8 @@ contract MaticTokenVesting is Ownable {
     event TokenVestingRemoved(uint256 indexed vestingId, address indexed beneficiary, uint256 amount);
 
     constructor(IERC20 _token) public {
-        require(address(_token) != address(0x0), "Matic token address is not valid");
-        maticToken = _token;
+        require(address(_token) != address(0x0), "Samkencoin address is not valid");
+        samkencoin = _token;
         // test data
         uint256 SCALING_FACTOR = 10 ** 18;
         uint256 day = 1 minutes;
@@ -82,7 +82,7 @@ contract MaticTokenVesting is Ownable {
     }
 
     function token() public view returns (IERC20) {
-        return maticToken;
+        return samkencoin;
     }
 
     function beneficiary(uint256 _vestingId) public view returns (address) {
@@ -126,15 +126,15 @@ contract MaticTokenVesting is Ownable {
         // solhint-disable-next-line not-rely-on-time
         require(block.timestamp >= vesting.releaseTime, NOT_VESTED);
 
-        require(maticToken.balanceOf(address(this)) >= vesting.amount, INSUFFICIENT_BALANCE);
+        require(samkencoin.balanceOf(address(this)) >= vesting.amount, INSUFFICIENT_BALANCE);
         vesting.released = true;
         tokensToVest = tokensToVest.sub(vesting.amount);
-        maticToken.safeTransfer(vesting.beneficiary, vesting.amount);
+        samkencoin.safeTransfer(vesting.beneficiary, vesting.amount);
         emit TokenVestingReleased(_vestingId, vesting.beneficiary, vesting.amount);
     }
 
     function retrieveExcessTokens(uint256 _amount) public onlyOwner {
-        require(_amount <= maticToken.balanceOf(address(this)).sub(tokensToVest), INSUFFICIENT_BALANCE);
-        maticToken.safeTransfer(owner(), _amount);
+        require(_amount <= samkencoin.balanceOf(address(this)).sub(tokensToVest), INSUFFICIENT_BALANCE);
+        samkencoin.safeTransfer(owner(), _amount);
     }
 }
