@@ -16,7 +16,7 @@ contract MaticTokenVesting is Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
-    IERC20 private maticToken;
+    IERC20 private samkencoin;
     uint256 private tokensToVest = 0;
     uint256 private vestingId = 0;
 
