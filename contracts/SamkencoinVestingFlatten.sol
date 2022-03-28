@@ -201,7 +201,7 @@ library SafeERC20 {
     }
 }
 
-// File: contracts/MaticTokenVesting.sol
+// File: contracts/SamkencoinVesting.sol
 
 /**
  * @title TokenVesting
@@ -209,11 +209,11 @@ library SafeERC20 {
  * typical vesting scheme, with a cliff and vesting period. Optionally revocable by the
  * owner.
  */
-contract MaticTokenVesting is Ownable {
+contract SamkencoinVesting is Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
-    IERC20 private maticToken;
+    IERC20 private samkencoin;
     uint256 private tokensToVest = 0;
     uint256 private vestingId = 0;
 
@@ -279,7 +279,7 @@ contract MaticTokenVesting is Ownable {
     }
 
     function token() public view returns (IERC20) {
-        return maticToken;
+        return samkencoin;
     }
 
     function beneficiary(uint256 _vestingId) public view returns (address) {
@@ -323,15 +323,15 @@ contract MaticTokenVesting is Ownable {
         // solhint-disable-next-line not-rely-on-time
         require(block.timestamp >= vesting.releaseTime, NOT_VESTED);
 
-        require(maticToken.balanceOf(address(this)) >= vesting.amount, INSUFFICIENT_BALANCE);
+        require(samkencoin.balanceOf(address(this)) >= vesting.amount, INSUFFICIENT_BALANCE);
         vesting.released = true;
         tokensToVest = tokensToVest.sub(vesting.amount);
-        maticToken.safeTransfer(vesting.beneficiary, vesting.amount);
+        samkencoin.safeTransfer(vesting.beneficiary, vesting.amount);
         emit TokenVestingReleased(_vestingId, vesting.beneficiary, vesting.amount);
     }
 
     function retrieveExcessTokens(uint256 _amount) public onlyOwner {
         require(_amount <= maticToken.balanceOf(address(this)).sub(tokensToVest), INSUFFICIENT_BALANCE);
-        maticToken.safeTransfer(owner(), _amount);
+        samkencoin.safeTransfer(owner(), _amount);
     }
 }
