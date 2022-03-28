@@ -3,8 +3,8 @@ const bluebird = require('bluebird')
 const abiDecoder = require('abi-decoder')
 const parseCsv = require('./utils').parseCsv
 
-const Token = artifacts.require("./contracts/MaticToken.sol")
-const Airdrop = artifacts.require("./contracts/MaticTokenAirdrop.sol")
+const Token = artifacts.require("./contracts/Samkencoin.sol")
+const Airdrop = artifacts.require("./contracts/SamkencoinAirdrop.sol")
 const BigNumber = web3.utils.BigNumber
 
 abiDecoder.addABI(Token._json.abi);
