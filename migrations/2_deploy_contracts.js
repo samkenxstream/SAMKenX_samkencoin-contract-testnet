@@ -1,6 +1,6 @@
-const Token = artifacts.require("MaticToken")
-// const TokenVesting = artifacts.require("MaticTokenVesting")
-const TokenAirdrop = artifacts.require("MaticTokenAirdrop")
+const Token = artifacts.require("Samkencoin")
+// const TokenVesting = artifacts.require("SamkencoinVesting")
+const TokenAirdrop = artifacts.require("SamkencoinAirdrop")
 const SCALING_FACTOR = web3.utils.toBN(10 ** 18)
 
 module.exports = async function(deployer) {
@@ -11,8 +11,8 @@ module.exports = async function(deployer) {
 
     await deployer.deploy(
       Token,
-      "Testnet Matic Token",
-      "MATIC",
+      "Testnet Samkencoin",
+      "SAMKEN",
       18,
       totalSupply
     )
