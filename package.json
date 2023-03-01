@@ -25,7 +25,7 @@
     "eth-sig-util": "2.1.1",
     "ethereumjs-util": "6.1.0",
     "ethereumjs-wallet": "0.6.3",
-    "ganache-cli": "6.3.0",
+    "ganache-cli": "6.12.2",
     "openzeppelin-solidity": "2.1.2",
     "truffle": "5.7.3",
     "truffle-hdwallet-provider": "1.0.5"
@@ -34,6 +34,6 @@
     "bluebird": "^3.5.5",
     "chai": "^4.2.0",
     "chai-bignumber": "^3.0.0",
-    "ganache-cli": "6.2.4"
+    "ganache-cli": "6.12.2"
   }
 }
