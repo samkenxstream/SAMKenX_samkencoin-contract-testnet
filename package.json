@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maticnetwork/token-contracts"
+    "url": "https://github.com/samkenxstream/samkencoin-contracts"
   },
   "config": {
     "mnemonics": "clock radar mass judge dismiss just intact mind resemble fringe diary casino"
   },
-  "author": "Matic Network <matic.network>",
+  "author": "SAMkenX Ecosystem <skx.network>",
   "license": "MIT",
   "dependencies": {
     "bip39": "2.5.0",
